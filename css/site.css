@@ -1,0 +1,155 @@
+html{
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    margin: 0;
+    font-family: 'Fira Sans';
+    font-weight: 200;
+    font-size: 12pt;
+    color:#fafafa;
+}
+/*----COMMON------*/
+
+/*----SPECIAL-STYLES----*/
+*{
+    box-sizing: border-box;
+}
+
+ul.list-unstyled{
+    list-style-type: none;
+}
+.total-hide{
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+.user-select-none *{
+  -webkit-user-select: none;
+  -moz-user-select: none;     
+  -ms-user-select: none;
+}
+/*-----ELEMENTS-----*/
+.body{
+    overflow: auto;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    min-width: 270px;
+    background: url(../images/background_additional_second_blur-min.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+.container-single{
+    width: 100%;
+    text-align: center;
+    padding: 35px 0px;
+}
+/*-----HEADER SECTION-----*/
+#userpic{
+    display: inline-block;
+    vertical-align: middle;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+    border-radius: 80px;
+    border: 5px solid rgba(255,255,255,0.35);
+}
+.header-section > span{
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 0px;
+    min-width: 100%;
+    font-size: 35px;
+    text-transform: uppercase;
+}
+.header-section > hr{
+    color: #fafafa;
+    border: none;
+    border-top: 1px solid;
+    max-width: 200px;
+}
+.header-section > span:last-child{
+
+    padding: 15px 0px;
+    text-transform: none;
+}
+/*------GALLERY SECTION------*/
+.gallery-section .gallery-item{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    margin: 15px;
+    width: 400px;
+    height: 266px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    outline: 5px solid rgba(255,255,255,0.45);
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+}
+.gallery-section .gallery-item:hover{
+    opacity: 1;
+
+}
+.gallery-item span{
+    color: #232323;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: justify;
+    background: rgba(255,255,255,0.75);
+    width: 100%;
+    padding: 10px 15px;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    opacity:0;
+    transition: opacity 0.3s ease-in-out;
+}
+.gallery-section .gallery-item:nth-child(3) span{
+    color: #fafafa;
+    font-weight: 300;
+    background: rgba(0,0,0,0.70);
+}
+.gallery-item:hover span{
+    opacity:1;
+}
+
+
+.gallery-section .gallery-item:nth-child(1){
+    background-image: url(../images/gallery/preview_3-min.jpg);
+}
+.gallery-section .gallery-item:nth-child(2){
+    background-image: url(../images/gallery/preview_1-min.jpg);
+}
+.gallery-section .gallery-item:nth-child(3){
+    background-image: url(../images/gallery/preview_2-min.jpg);
+}
+/*------GRIDS------*/
+ @media screen and (max-width: 450px){
+    .gallery-item span{
+        height: 100%;
+    }
+    .gallery-section .gallery-item{
+       width: 85%;
+       height: 185px;
+    }
+ }
+ @media screen and (min-width: 769px) {
+    .header-section > span{
+        font-size: 40px;
+        padding-left: 20px;
+        min-width: inherit;
+    }
+    .header-section > hr{
+        max-width: 400px;
+    }
+}
+ @media screen and (min-width: 1024px) {
+    .header-section > span{
+        font-size: 50px;
+    }
+    .header-section > hr{
+        max-width: 450px;
+    }
+}
