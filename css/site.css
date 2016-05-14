@@ -26,7 +26,7 @@ ul.list-unstyled{
 }
 .user-select-none *{
   -webkit-user-select: none;
-  -moz-user-select: none;     
+  -moz-user-select: none;
   -ms-user-select: none;
 }
 /*-----ELEMENTS-----*/
@@ -51,32 +51,33 @@ ul.list-unstyled{
     width: 150px;
     height: 150px;
     margin-bottom: 10px;
-    border-radius: 80px;
+    border-radius: 50%;
     border: 5px solid rgba(255,255,255,0.35);
+    opacity: 0.95;
 }
-.header-section > span{
+.header-section .name-job-wrap{
     display: inline-block;
-    vertical-align: middle;
-    padding-left: 0px;
-    min-width: 100%;
     font-size: 35px;
+    vertical-align: middle;
+    text-align: left;
+    padding: 0px 15px;
+}
+.name-job-wrap .job{
     text-transform: uppercase;
 }
 .header-section > hr{
+    margin: 15px auto;
     color: #fafafa;
     border: none;
     border-top: 1px solid;
-    max-width: 200px;
-}
-.header-section > span:last-child{
-
-    padding: 15px 0px;
-    text-transform: none;
+    max-width: 50%;
 }
 /*------GALLERY SECTION------*/
 .gallery-section .gallery-item{
     cursor: pointer;
     display: inline-block;
+    vertical-align: -webkit-baseline-middle;
+    vertical-align: middle;
     position: relative;
     margin: 15px;
     width: 400px;
@@ -92,7 +93,32 @@ ul.list-unstyled{
     opacity: 1;
 
 }
-.gallery-item span{
+.gallery-item .description-wrap{
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    color: #232323;
+    background: rgba(255,255,255,0.90);
+    height: 100%;
+    opacity:0;
+    transition: opacity 0.35s ease-in-out;
+}
+.gallery-item:hover .description-wrap{
+    opacity:1;
+}
+.description-wrap .description{
+    display: block;
+    padding: 10px 15px;
+
+    font-weight: 100;
+    line-height: 18px;
+    text-align: justify;
+}
+.description-wrap.description-dark{
+    color: #fafafa;
+    background: rgba(0,0,0,0.85);
+}
+/*.gallery-item span{
     color: #232323;
     font-weight: 400;
     line-height: 18px;
@@ -106,14 +132,15 @@ ul.list-unstyled{
     opacity:0;
     transition: opacity 0.3s ease-in-out;
 }
-.gallery-section .gallery-item:nth-child(3) span{
+.gallery-item:hover span{
+    opacity:1;
+}*/
+/*.gallery-section .gallery-item:nth-child(3) span{
     color: #fafafa;
     font-weight: 300;
     background: rgba(0,0,0,0.70);
-}
-.gallery-item:hover span{
-    opacity:1;
-}
+}*/
+
 
 
 .gallery-section .gallery-item:nth-child(1){
@@ -126,30 +153,43 @@ ul.list-unstyled{
     background-image: url(../images/gallery/preview_2-min.jpg);
 }
 /*------GRIDS------*/
- @media screen and (max-width: 450px){
-    .gallery-item span{
-        height: 100%;
-    }
+@media screen and (max-width: 480px){
     .gallery-section .gallery-item{
        width: 85%;
-       height: 185px;
+       height: 210px;
     }
+}
+ @media screen and (max-width: 767px){
+     .header-section > .name-job-wrap{
+         display: block;
+         font-size: 25px;
+         text-align: center;
+     }
  }
- @media screen and (min-width: 769px) {
-    .header-section > span{
-        font-size: 40px;
-        padding-left: 20px;
-        min-width: inherit;
-    }
+ @media screen and (min-width: 768px) {
+     .header-section > .name-job-wrap{
+         font-size: 35px;
+     }
     .header-section > hr{
-        max-width: 400px;
+        max-width: 415px;
     }
 }
  @media screen and (min-width: 1024px) {
-    .header-section > span{
-        font-size: 50px;
+    .header-section > .name-job-wrap{
+        font-size: 45px;
     }
     .header-section > hr{
         max-width: 450px;
     }
+}
+/*------FLEX-CLASSES------*/
+.flex-content-center{
+    align-items: center;
+    align-content: center;
+
+    -ms-align-items: center;
+    -ms-align-content: center;
+
+    -webkit-align-items: center;
+    -webkit-align-content: center;
 }
