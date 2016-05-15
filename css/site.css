@@ -1,5 +1,8 @@
 html{
     height: 100%;
+    overflow: hidden;
+    background: url(../images/background_additional_second_blur-min.jpg) no-repeat center center fixed;
+    background-size: cover;
 }
 body {
     min-height: 100%;
@@ -36,8 +39,6 @@ ul.list-unstyled{
     height: 100%;
     width: 100%;
     min-width: 270px;
-    background: url(../images/background_additional_second_blur-min.jpg) no-repeat center center fixed;
-    background-size: cover;
 }
 .container-single{
     width: 100%;
@@ -67,6 +68,7 @@ ul.list-unstyled{
 }
 .header-section > hr{
     margin: 15px auto;
+    margin-bottom: 0px;
     color: #fafafa;
     border: none;
     border-top: 1px solid;
