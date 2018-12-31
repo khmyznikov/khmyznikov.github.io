@@ -10,6 +10,8 @@ body{
     width: 100%;
     height: 100%;
     margin: 0;
+
+    overflow: hidden;
 }
 
 .envelope{
@@ -17,11 +19,11 @@ body{
     display: flex;
 
     background-color: #d8dee6;
+    background: url(letter.png), linear-gradient(to bottom, #eaf0f9 0%,#86919e 100%);
     width: 500px;
     height: 300px;
     
     perspective-origin: 50% 50%;
-    animation: envelope 2s ease forwards 1 0.5s;
 }
 
 .envelope .front-side{
@@ -46,13 +48,10 @@ body{
     border-top-color: #fbfbfb;
     margin: 0 auto;
     transform: scale(1.25, 1);
-    /* margin-bottom: -400px; */
-    /* cursor: pointer; */
     transition: all 0.5s ease;
     transform-origin: 50% 0;
 
     z-index: 2;
-    animation: top-cover 1s ease forwards 1 0.5s;
 }
 
 .envelope .letter{
@@ -63,8 +62,6 @@ body{
     flex-grow: 12;
     padding: 15px;
     margin: 5px;
-
-    animation: letter 1s ease forwards 1 1.5s;
 
     background-color: #ffcccd;
     box-shadow: 0px 12px 30px -13px rgba(0,0,0,0.75);
@@ -80,6 +77,8 @@ body{
     top: 0;
     height: 100%;
     width: 100%;
+
+    background: url(paper.png), linear-gradient(to bottom, #ffe2c1 0%,#ffbb70 100%);
 }
 
 .envelope .letter .letter-second-part{
@@ -87,15 +86,49 @@ body{
 
     flex-grow: 1;
 
-    background-color: bisque;
+    background: url("paper.png"), linear-gradient(to bottom, #ffc482 0%,#ffe2c1 100%);
 
     transform: rotateX(180deg);
     color: bisque;
 
     transform-origin: top center;
-    animation: letter-second-part 1s ease forwards 1 2.5s;
 
     box-shadow: 0px 15px 30px -13px rgba(0,0,0,0.55);
+}
+
+.envelope .wax-stamp{
+    background: url(wax-stamp.png);
+    background-size: 132px 250px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    padding-top: 60px;
+    padding-left: 20px;
+    position: absolute;
+    left: 0;
+    transform: rotateZ(10deg);
+}
+
+.animate .envelope{
+    animation: envelope 2s ease forwards 1 0.3s;
+}
+
+.animate .envelope .top-cover{
+    animation: top-cover 1s ease forwards 1 0.3s;
+}
+
+.animate .envelope .letter{
+    animation: letter 1s ease forwards 1 1.2s;
+}
+
+.animate .envelope .letter .letter-second-part{
+    animation: letter-second-part 1.5s ease forwards 1 1.2s;
+}
+
+.animate .envelope .wax-stamp{
+    animation: wax-stamp 1s ease forwards 1 1.2s;
 }
 
 @keyframes top-cover {
@@ -131,7 +164,7 @@ body{
         transform: perspective(900px) rotateX(180deg);
         color:bisque;
     }
-    50%{
+    60%{
         transform: perspective(1500px) rotateX(90deg);
         color:bisque;
     }
@@ -140,3 +173,31 @@ body{
         color:#000;
         }
     }
+
+@keyframes wax-stamp {
+    100% {
+        z-index: 1;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .envelope{
+        width: 300px;
+        height: 200px;
+    }
+    .envelope .front-side{
+        width: 100px;
+        border: 100px solid #f3f5f9;
+        border-bottom: 100px solid #e6edf5;
+        border-top: 100px solid transparent;
+    }
+    .envelope .top-cover{
+        border: 120px solid transparent;
+        border-top-color: #fbfbfb;
+        transform: scale(1.25, 1.25);
+    }
+
+    .envelope .wax-stamp{
+        background-size: 112px 210px;
+    }
+}
