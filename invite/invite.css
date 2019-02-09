@@ -6,13 +6,13 @@ html{
 
     overflow: hidden;
 
-    font-family: 'Marck Script', cursive;
-    font-size: 30px;
+    font-family: 'Amatic SC', 'Neucha', cursive;
+    font-size: 29px;
 }
 body{
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
     position: absolute;
     width: 100%;
     height: 100%;
@@ -21,25 +21,66 @@ body{
     overflow: hidden;
 }
 
+h2{
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+h3{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px; /* 1px wider than Lion. */
+    background-color: rgba(255, 187, 0, 0.1);
+    -webkit-border-radius: 100px;
+}
+
+::-webkit-scrollbar:hover {
+    background-color: rgba(255, 187, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: rgba(136, 72, 0, 0.3);
+    -webkit-border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:active {
+    background: rgba(136, 72, 0, 0.4);
+    -webkit-border-radius: 100px;
+}
+
 .envelope{
     position: relative;
     display: flex;
 
     background-color: #d8dee6;
     background: url(letter.png), linear-gradient(to bottom, #eaf0f9 0%,#86919e 100%);
-    width: 500px;
-    height: 300px;
+    width: 520px;
+    height: 320px;
+    
+    margin: 0 auto;
+    margin-top: calc(50vh - 160px);
+    right: 0;
+    left: 0;
     
     perspective-origin: 50% 50%;
+}
+
+.envelope.no-background{
+    top:0;
+    position: absolute;
+    background: none;
 }
 
 .envelope .front-side{
     position: absolute;
     width: 100px;
 
-    border: 200px solid #f3f5f9;
-    border-bottom: 150px solid #e6edf5;
-    border-top: 150px solid transparent;
+    border: 210px solid #f3f5f9;
+    border-bottom: 160px solid #e6edf5;
+    border-top: 160px solid transparent;
 
     z-index: 1;
 }
@@ -51,7 +92,7 @@ body{
     left: 0;
     width: 0;
     height: 0;
-    border: 200px solid transparent;
+    border: 208px solid transparent;
     border-top-color: #fbfbfb;
     margin: 0 auto;
     transform: scale(1.25, 1);
@@ -61,41 +102,57 @@ body{
     z-index: 2;
 }
 
-.envelope .letter{
-    position: relative;
+.letter{
+    position: absolute;
     /* display: flex;
     flex-direction: column; */
 
     flex-grow: 12;
-    padding: 15px;
+    /* padding: 15px; */
     margin: 5px;
+
+    width: 510px;
+    min-width: 470px;
+    max-width: 720px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: calc(50vh - 155px);
+    right: 0;
+    left: 0;
+    top: 0;
 
     transform-origin: top center;
 
-    background-color: #ffcccd;
+    background: linear-gradient(to bottom, #F1E1D4 0%,#EADCCF 100%);
     box-shadow: 0px 12px 30px -13px rgba(0,0,0,0.75);
 }
 
-.envelope .letter .letter-text{
-    padding: 20px;
+.letter .letter-text{
+    min-height: calc(100% - 30px);
+    padding: 15px;
+    text-align: center;
+    color: #0E0D0B;
+    background: linear-gradient(to bottom, rgba(255, 177, 103, 0.25) 0%, rgba(150, 67, 0, 0.25) 100%);
 }
 
-.envelope .letter .letter-first-part, .envelope .letter .letter-second-part{
+.letter .letter-first-part, .letter .letter-second-part{
     position: absolute;
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
 
-    background: url(paper.png), linear-gradient(to bottom, #ffe2c1 0%,#ffbb70 100%);
+    overflow-y: auto;
+
+    background: url("paper-3.png");
 }
 
-.envelope .letter .letter-second-part{
+.letter .letter-second-part{
     top:100%;
 
     flex-grow: 1;
 
-    background: url("paper.png"), linear-gradient(to bottom, #ffc482 0%,#ffe2c1 100%);
+    background: url("paper-3.png");
 
     transform: rotateX(180deg);
     
@@ -108,7 +165,7 @@ body{
 }
 
 .envelope .wax-stamp{
-    background: url(wax-stamp.png);
+    background: url("wax-stamp.png");
     background-size: 132px 250px;
     background-repeat: no-repeat;
     background-position: center;
@@ -129,14 +186,20 @@ body{
 .animate .envelope .top-cover{
     animation: top-cover 1s ease forwards 1 0.2s;
 }
-
-.animate .envelope .letter{
-    animation: letter 1s ease forwards 1 1.1s;
+.animate .envelope.no-background .top-cover{
+    animation: top-cover-2 1s ease forwards 1 0.2s;
 }
 
-.animate .envelope .letter .letter-second-part{
+.animate .letter{
+    animation: letter 2s ease forwards 1 1.1s;
+}
+
+.animate .letter .letter-second-part{
     animation: letter-second-part 1.5s ease forwards 1 1.2s;
 }
+/* .animate .letter .letter-first-part{
+    animation: letter-first-part 1.5s ease forwards 1 1.2s;
+} */
 
 .animate .envelope .wax-stamp{
     animation: wax-stamp 1s ease forwards 1 1.2s;
@@ -157,7 +220,7 @@ body{
 
 }
 
-.reverse .envelope .letter{
+.reverse .letter{
     transform: translateY(-60vh);
     z-index: 1;
 
@@ -165,7 +228,7 @@ body{
    
 }
 
-.reverse .envelope .letter .letter-second-part{
+.reverse .letter .letter-second-part{
     transform: perspective(900px) rotateX(20deg);
     color:#000;
   
@@ -184,13 +247,23 @@ body{
 @keyframes top-cover {
 99% {
     transform: rotateX(-180deg) scale(1.25,1);
-    z-index: 2;
+    z-index: 3;
     }
 100% {
     transform: rotateX(-180deg) scale(1.25,1);
     z-index: 0;
     }
 }
+@keyframes top-cover-2 {
+    99% {
+        transform: rotateX(-180deg) scale(1.25,1);
+        opacity: 0;
+        }
+    100% {
+        transform: rotateX(-180deg) scale(1.25,1);
+        opacity: 0;
+        }
+    }
 @keyframes top-cover-r {
     0%{
         transform: rotateX(-180deg) scale(1.25,1);
@@ -227,9 +300,19 @@ body{
 
 
 @keyframes letter {
-    100% {
-        transform: translateY(-60vh);
+    50% {
+        margin-top: 2.5vh;
+        height: 22.5vh;
+        width: 45vw;
         z-index: 1;
+        transform: perspective(900px) rotateX(-2.5deg);
+        }
+    100% {
+        margin-top: 5vh;
+        height: 45vh;
+        width: 85vw;
+        z-index: 2;
+        transform: perspective(900px) rotateX(-5deg);
         }
     }
 @keyframes letter-r {
@@ -249,7 +332,7 @@ body{
         color:transparent;
     }
     100% {
-        transform: perspective(900px) rotateX(20deg);
+        transform: perspective(900px) rotateX(10deg);
         color:#000;
         }
     }
@@ -268,6 +351,12 @@ body{
         }
     }
 
+    /* @keyframes letter-first-part {
+        100% {
+            transform: perspective(900px) rotateX(-10deg);
+            }
+        } */
+
 @keyframes wax-stamp {
     100% {
         z-index: 1;
@@ -284,9 +373,17 @@ body{
         font-size: 19px;
     }
 
+    .letter{
+        width: 260px;
+        min-width: 260px;
+        height: 160px;
+        margin-top: calc(50vh - 95px);
+    }
+
     .envelope{
         width: 300px;
         height: 200px;
+        margin-top: calc(50vh - 100px);
     }
     .envelope .front-side{
         width: 100px;
