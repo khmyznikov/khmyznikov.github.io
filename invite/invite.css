@@ -127,12 +127,28 @@ h3{
     box-shadow: 0px 12px 30px -13px rgba(0,0,0,0.75);
 }
 
+.text-decorator{
+    display: block;
+    height: 62px;
+    width: 100%;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(text-decorator.png);
+    transform: rotate(180deg);
+}
+
 .letter .letter-text{
     min-height: calc(100% - 30px);
     padding: 15px;
     text-align: center;
-    color: #0E0D0B;
     background: linear-gradient(to bottom, rgba(255, 177, 103, 0.25) 0%, rgba(150, 67, 0, 0.25) 100%);
+
+    line-height: 35px;
+}
+.letter .letter-text.text-smaller{
+    font-size: 90%;
+    line-height: 30px;
 }
 
 .letter .letter-first-part, .letter .letter-second-part{
@@ -141,6 +157,8 @@ h3{
     top: 0;
     height: 100%;
     width: 100%;
+
+    color:#0E0D0B;
 
     overflow-y: auto;
 
@@ -333,7 +351,7 @@ h3{
     }
     100% {
         transform: perspective(900px) rotateX(10deg);
-        color:#000;
+        color:#0E0D0B;
         }
     }
 @keyframes letter-second-part-r {
@@ -347,7 +365,7 @@ h3{
     }
     100% {
         transform: perspective(900px) rotateX(180deg);
-        color:#000;
+        color:#0E0D0B;
         }
     }
 
@@ -366,6 +384,36 @@ h3{
     100% {
         z-index: 2;
     }
+}
+
+.suggestions-list{
+    text-align: justify;
+    padding-left: 25px;
+}
+.suggestions-list li{
+    padding: 5px 0px;
+}
+.suggestions-list .color-circle{
+    font-size: 90px;
+    line-height: 5px;
+    display: inline-block;
+    width: 45px;
+    height: 38px;
+    vertical-align: middle;
+    margin-left: -15px;
+}
+
+.color-circle:nth-child(1){
+    color: #228B22;
+}
+.color-circle:nth-child(2){
+    color: #FFEBCD;
+}
+.color-circle:nth-child(3){
+    color: #87CEEB;
+}
+.color-circle:nth-child(4){
+    color: #6b4007;
 }
 
 @media screen and (max-width: 767px){
