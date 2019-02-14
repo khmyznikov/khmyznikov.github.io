@@ -394,8 +394,8 @@ h3{
     padding: 5px 0px;
 }
 .suggestions-list .color-circle{
-    font-size: 90px;
-    line-height: 5px;
+    font-size: 70px;
+    line-height: 28px;
     display: inline-block;
     width: 45px;
     height: 38px;
@@ -404,16 +404,19 @@ h3{
 }
 
 .color-circle:nth-child(1){
-    color: #228B22;
+    color: #8f796e;
 }
 .color-circle:nth-child(2){
-    color: #FFEBCD;
+    color: #d2abb6;
 }
 .color-circle:nth-child(3){
-    color: #87CEEB;
+    color: #efeed8;
 }
 .color-circle:nth-child(4){
-    color: #6b4007;
+    color: #c4e5d6;
+}
+.color-circle:nth-child(5){
+    color: #a5c0d0;
 }
 
 @media screen and (max-width: 767px){
