@@ -235,12 +235,18 @@ h3{
     z-index: 0;
 
     animation: top-cover-r 1s ease forwards 1 2.6s;
+}
 
+.reverse .envelope.no-background .top-cover{
+    animation: top-cover-2-r 1s ease forwards 1 2.6s;
 }
 
 .reverse .letter{
-    transform: translateY(-60vh);
-    z-index: 1;
+    margin-top: 5vh;
+    height: 45vh;
+    width: 85vw;
+    z-index: 2;
+    transform: perspective(900px) rotateX(-5deg);
 
     animation: letter-r 1s ease forwards 1 1.6s;
    
@@ -248,10 +254,14 @@ h3{
 
 .reverse .letter .letter-second-part{
     transform: perspective(900px) rotateX(20deg);
-    color:#000;
+    color:#0E0D0B;
   
     animation: letter-second-part-r 1.5s ease forwards 1 0.1s;
+}
 
+.reverse .letter .letter-second-part .suggestions-list .color-circle{
+    opacity: 0;
+    transition: opacity ease 1s;
 }
 
 .reverse .envelope .wax-stamp{
@@ -283,6 +293,21 @@ h3{
         }
     }
 @keyframes top-cover-r {
+    0%{
+        transform: rotateX(-180deg) scale(1.25,1);
+        z-index: 0;
+    }
+    99% {
+        transform: rotateX(0) scale(1.25,1);
+        z-index: 2;
+        }
+    100% {
+        transform: rotateX(0) scale(1.25,1);
+        z-index: 2;
+        }
+    }
+
+@keyframes top-cover-2-r {
     0%{
         transform: rotateX(-180deg) scale(1.25,1);
         z-index: 0;
@@ -335,8 +360,12 @@ h3{
     }
 @keyframes letter-r {
     100% {
-        transform: translateY(0);
+        width: 510px;
+        height: 300px;
         z-index: 0;
+
+        transform: translateY(0);
+        margin-top: calc(50vh - 155px);
         }
     }
 
@@ -357,7 +386,7 @@ h3{
 @keyframes letter-second-part-r {
     0%{
         transform: perspective(900px) rotateX(20deg);
-        color:transparent;
+        color:#0E0D0B;
     }
     50%{
         transform: perspective(1500px) rotateX(90deg);
@@ -365,7 +394,7 @@ h3{
     }
     100% {
         transform: perspective(900px) rotateX(180deg);
-        color:#0E0D0B;
+        color:transparent;
         }
     }
 
