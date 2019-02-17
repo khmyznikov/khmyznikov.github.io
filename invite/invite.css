@@ -27,6 +27,11 @@ h3{
     margin-top: 10px;
     margin-bottom: 10px;
 }
+p{
+    margin-top: 15px;
+    margin-bottom: 10px;
+    line-height: 130%;
+}
 
 ::-webkit-scrollbar {
     height: 8px;
@@ -124,7 +129,7 @@ h3{
 .text-decorator{
     display: block;
     height: 66px;
-    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
     background-size: 60%;
     background-repeat: no-repeat;
@@ -469,6 +474,11 @@ h3{
     .reverse .letter{
         height: 45vh;
         width: 85vw;
+    }
+
+    .text-decorator{
+        height: 30px;
+        background-size: 80%;
     }
 
     .envelope{
