@@ -6,13 +6,11 @@ html{
 
     overflow: hidden;
 
-    font-family: 'Amatic SC', 'Neucha', cursive;
+    font-family: 'Amatic SC', cursive;
+
     font-size: 29px;
 }
 body{
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
     position: absolute;
     width: 100%;
     height: 100%;
@@ -96,7 +94,6 @@ h3{
     border-top-color: #fbfbfb;
     margin: 0 auto;
     transform: scale(1.25, 1);
-    /* transition: all 0.5s ease; */
     transform-origin: 50% 0;
 
     z-index: 2;
@@ -104,11 +101,8 @@ h3{
 
 .letter{
     position: absolute;
-    /* display: flex;
-    flex-direction: column; */
 
     flex-grow: 12;
-    /* padding: 15px; */
     margin: 5px;
 
     width: 510px;
@@ -129,7 +123,8 @@ h3{
 
 .text-decorator{
     display: block;
-    height: 62px;
+    height: 66px;
+    padding-top: 10px;
     width: 100%;
     background-size: 60%;
     background-repeat: no-repeat;
@@ -215,9 +210,6 @@ h3{
 .animate .letter .letter-second-part{
     animation: letter-second-part 1.5s ease forwards 1 1.2s;
 }
-/* .animate .letter .letter-first-part{
-    animation: letter-first-part 1.5s ease forwards 1 1.2s;
-} */
 
 .animate .envelope .wax-stamp{
     animation: wax-stamp 1s ease forwards 1 1.2s;
@@ -239,6 +231,7 @@ h3{
 
 .reverse .envelope.no-background .top-cover{
     animation: top-cover-2-r 1s ease forwards 1 2.6s;
+    opacity: 0;
 }
 
 .reverse .letter{
@@ -311,14 +304,17 @@ h3{
     0%{
         transform: rotateX(-180deg) scale(1.25,1);
         z-index: 0;
+        opacity: 1;
     }
     99% {
         transform: rotateX(0) scale(1.25,1);
         z-index: 2;
+        opacity: 1;
         }
     100% {
         transform: rotateX(0) scale(1.25,1);
         z-index: 2;
+        opacity: 1;
         }
     }
 
@@ -343,6 +339,9 @@ h3{
 
 
 @keyframes letter {
+    0% {
+        margin-top: calc(50vh - 155px);
+        }
     50% {
         margin-top: 2.5vh;
         height: 22.5vh;
@@ -359,9 +358,23 @@ h3{
         }
     }
 @keyframes letter-r {
+    0% {
+        height: 45vh;
+        width: 85vw;
+        
+        z-index: 0;
+        margin-top: calc(50vh / 4 - 155px  / 4);
+        }
+    50% {
+        height: 22.5vh;
+        width: 45vw;
+        
+        z-index: 0;
+        margin-top: calc(50vh / 2 - 155px / 2);
+        }
     100% {
-        width: 510px;
-        height: 300px;
+        height: 22.5vh;
+        width: 45vw;
         z-index: 0;
 
         transform: translateY(0);
@@ -398,12 +411,6 @@ h3{
         }
     }
 
-    /* @keyframes letter-first-part {
-        100% {
-            transform: perspective(900px) rotateX(-10deg);
-            }
-        } */
-
 @keyframes wax-stamp {
     100% {
         z-index: 1;
@@ -424,7 +431,7 @@ h3{
 }
 .suggestions-list .color-circle{
     font-size: 70px;
-    line-height: 28px;
+    line-height: 18%;
     display: inline-block;
     width: 45px;
     height: 38px;
@@ -459,6 +466,10 @@ h3{
         height: 160px;
         margin-top: calc(50vh - 95px);
     }
+    .reverse .letter{
+        height: 45vh;
+        width: 85vw;
+    }
 
     .envelope{
         width: 300px;
@@ -480,4 +491,66 @@ h3{
     .envelope .wax-stamp{
         background-size: 112px 210px;
     }
+
+    .suggestions-list .color-circle{
+        width: 36px;
+    }
+
+    @keyframes letter-r {
+        0% {
+            height: 45vh;
+            width: 85vw;
+            
+            z-index: 0;
+            margin-top: calc(50vh - 95px) / 4;
+            }
+        50% {
+            height: 22.5vh;
+            width: 45vw;
+            
+            z-index: 0;
+            margin-top: calc(50vh - 95px) / 2;
+            }
+        100% {
+            height: 22.5vh;
+            width: 45vw;
+            z-index: 0;
+    
+            transform: translateY(0);
+            margin-top: calc(50vh - 95px);
+            }
+        }
+
+    @keyframes top-cover-r {
+        0%{
+            transform: rotateX(-180deg) scale(1.25,1.25);
+            z-index: 0;
+        }
+        99% {
+            transform: rotateX(0) scale(1.25, 1.25);
+            z-index: 2;
+            }
+        100% {
+            transform: rotateX(0) scale(1.25, 1.25);
+            z-index: 2;
+            }
+        }
+    
+    @keyframes top-cover-2-r {
+        0%{
+            transform: rotateX(-180deg) scale(1.25, 1.25);
+            z-index: 0;
+            opacity: 1;
+        }
+        99% {
+            transform: rotateX(0) scale(1.25, 1.25);
+            z-index: 2;
+            opacity: 1;
+            }
+        100% {
+            transform: rotateX(0) scale(1.25, 1.25);
+            z-index: 2;
+            opacity: 1;
+            }
+        }
 }
