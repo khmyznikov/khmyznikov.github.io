@@ -10,5 +10,17 @@ function openEnvelope() {
         document.body.classList.add('reverse');
         _opened = false;
     }
-    
+}
+
+function encode(str) {
+    return window.btoa(unescape(encodeURIComponent(str)));
+}
+
+function decode(str) {
+    return decodeURIComponent(escape(window.atob(str)));
+}
+
+var recipient = new URL(location.href).searchParams.get('recipient');
+if (recipient){
+    document.getElementById('recipient').innerText = decode(recipient);
 }
