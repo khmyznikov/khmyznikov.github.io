@@ -182,6 +182,10 @@ p{
     box-shadow: 0px 15px 30px -13px rgba(0,0,0,0.55);
 }
 
+.plural{
+    display: none;
+}
+
 .envelope .wax-stamp{
     background: url("wax-stamp.png");
     background-size: 132px 250px;
@@ -444,19 +448,19 @@ p{
     margin-left: -15px;
 }
 
-.color-circle:nth-child(1){
+.color-circle:nth-child(5){
     color: #8f796e;
 }
-.color-circle:nth-child(2){
+.color-circle:nth-child(6){
     color: #d2abb6;
 }
-.color-circle:nth-child(3){
+.color-circle:nth-child(7){
     color: #efeed8;
 }
-.color-circle:nth-child(4){
+.color-circle:nth-child(8){
     color: #c4e5d6;
 }
-.color-circle:nth-child(5){
+.color-circle:nth-child(9){
     color: #a5c0d0;
 }
 

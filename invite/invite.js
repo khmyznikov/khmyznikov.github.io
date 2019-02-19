@@ -24,3 +24,9 @@ var recipient = new URL(location.href).searchParams.get('recipient');
 if (recipient){
     document.getElementById('recipient').innerText = decode(recipient);
 }
+
+var plural = new URL(location.href).searchParams.get('plural');
+if (plural) {
+    document.styleSheets[1].insertRule('.letter-text .plural {display: inline;}', 0)
+    document.styleSheets[1].insertRule('.letter-text .single {display: none;}', 0);
+}
