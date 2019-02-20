@@ -145,6 +145,9 @@ p{
     background: linear-gradient(to bottom, rgba(255, 177, 103, 0.25) 0%, rgba(150, 67, 0, 0.25) 100%);
 
     line-height: 35px;
+
+    display: flex;
+    align-items: center;
 }
 .letter .letter-text.text-smaller{
     font-size: 90%;
@@ -443,11 +446,11 @@ p{
     padding: 5px 0px;
 }
 .suggestions-list .color-circle{
-    font-size: 70px;
+    font-size: 80px;
     line-height: 18%;
     display: inline-block;
     width: 45px;
-    height: 38px;
+    height: 23px;
     vertical-align: middle;
     margin-left: -15px;
 }
@@ -512,6 +515,8 @@ p{
 
     .suggestions-list .color-circle{
         width: 36px;
+        height: 18px;
+        font-size: 60px;
     }
 
     @keyframes letter-r {
