@@ -129,7 +129,7 @@ p{
 .text-decorator{
     display: block;
     height: 66px;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
     width: 100%;
     background-size: 60%;
     background-repeat: no-repeat;
@@ -449,26 +449,27 @@ p{
     font-size: 80px;
     line-height: 18%;
     display: inline-block;
-    width: 45px;
-    height: 23px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
     vertical-align: middle;
-    margin-left: -15px;
+    margin-right: 5px;
 }
 
 .color-circle:nth-child(5){
-    color: #8f796e;
+    background-color: #8f796e;
 }
 .color-circle:nth-child(6){
-    color: #d2abb6;
+    background-color: #d2abb6;
 }
 .color-circle:nth-child(7){
-    color: #efeed8;
+    background-color: #efeed8;
 }
 .color-circle:nth-child(8){
-    color: #c4e5d6;
+    background-color: #c4e5d6;
 }
 .color-circle:nth-child(9){
-    color: #a5c0d0;
+    background-color: #a5c0d0;
 }
 
 @media screen and (max-width: 767px){
@@ -488,8 +489,11 @@ p{
     }
 
     .text-decorator{
-        height: 30px;
-        background-size: 80%;
+        height: 45px;
+        width: 250px;
+        background-size: cover;
+        margin: 0 auto;
+        box-sizing: content-box;
     }
 
     .envelope{
@@ -514,9 +518,9 @@ p{
     }
 
     .suggestions-list .color-circle{
-        width: 36px;
+        width: 18px;
         height: 18px;
-        font-size: 60px;
+        margin-right: 2px;
     }
 
     @keyframes letter-r {
@@ -574,6 +578,56 @@ p{
             transform: rotateX(0) scale(1.25, 1.25);
             z-index: 2;
             opacity: 1;
+            }
+        }
+}
+
+@media screen and (max-width: 414px){
+    .reverse .letter{
+        height: calc(50vh - 10px);
+        width: 98vw;
+    }
+    @keyframes letter {
+        0% {
+            margin-top: calc(50vh - 155px);
+            }
+        50% {
+            margin-top: 12.5px;
+            height: 25vh;
+            width: 55vw;
+            z-index: 1;
+            transform: perspective(900px) rotateX(-2.5deg);
+            }
+        100% {
+            margin-top: 25px;
+            height: calc(50vh - 10px);
+            width: 98vw;
+            z-index: 2;
+            transform: perspective(900px) rotateX(-5deg);
+            }
+        }
+
+    @keyframes letter-r {
+        0% {
+            margin-top: 25px;
+            height: calc(50vh - 10px);
+            width: 98vw;
+            
+            z-index: 0;            }
+        50% {
+            margin-top: 12.5px;
+            height: 25vh;
+            width: 55vw;
+            
+            z-index: 0;
+            }
+        100% {
+            height: 22.5vh;
+            width: 45vw;
+            z-index: 0;
+    
+            transform: translateY(0);
+            margin-top: calc(50vh - 95px);
             }
         }
 }
