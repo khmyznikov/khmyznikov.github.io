@@ -584,6 +584,7 @@ p{
 
 @media screen and (max-width: 414px){
     .reverse .letter{
+        margin-top: 25px;
         height: calc(50vh - 10px);
         width: 98vw;
     }
@@ -600,7 +601,7 @@ p{
             }
         100% {
             margin-top: 25px;
-            height: calc(50vh - 10px);
+            height: calc(50vh - 25px);
             width: 98vw;
             z-index: 2;
             transform: perspective(900px) rotateX(-5deg);
