@@ -32,6 +32,10 @@ p{
     margin-bottom: 10px;
     line-height: 130%;
 }
+.newlyweds, .recipient{
+    font-family: 'Pattaya';
+    font-weight: 100;
+}
 
 ::-webkit-scrollbar {
     height: 8px;
