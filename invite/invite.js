@@ -13,7 +13,7 @@ function openEnvelope() {
 }
 
 function encode(str) {
-    return window.btoa(unescape(encodeURIComponent(str)));
+    return encodeURIComponent(window.btoa(unescape(encodeURIComponent(str))));
 }
 
 function decode(str) {

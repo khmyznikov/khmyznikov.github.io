@@ -22,17 +22,20 @@ body{
 h2{
     margin-top: 0;
     margin-bottom: 10px;
+    font-size: 1.6em;
 }
 h3{
     margin-top: 10px;
     margin-bottom: 10px;
+    font-size: 1.27em;
 }
 p{
     margin-top: 15px;
     margin-bottom: 10px;
     line-height: 130%;
 }
-.newlyweds, .recipient{
+
+h2, h3{
     font-family: 'Pattaya';
     font-weight: 100;
 }
@@ -589,7 +592,7 @@ p{
 @media screen and (max-width: 414px){
     .reverse .letter{
         margin-top: 25px;
-        height: calc(50vh - 10px);
+        height: calc(50vh - 30px);
         width: 98vw;
     }
     @keyframes letter {
@@ -605,7 +608,7 @@ p{
             }
         100% {
             margin-top: 25px;
-            height: calc(50vh - 25px);
+            height: calc(50vh - 30px);
             width: 98vw;
             z-index: 2;
             transform: perspective(900px) rotateX(-5deg);
@@ -615,7 +618,7 @@ p{
     @keyframes letter-r {
         0% {
             margin-top: 25px;
-            height: calc(50vh - 10px);
+            height: calc(50vh - 30px);
             width: 98vw;
             
             z-index: 0;            }
