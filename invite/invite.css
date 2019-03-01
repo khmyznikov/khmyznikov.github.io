@@ -40,6 +40,13 @@ h2, h3{
     font-weight: 100;
 }
 
+.inline-block{
+    display: inline-block;
+}
+.no-margin-bottom{
+    margin-bottom: 0;
+}
+
 ::-webkit-scrollbar {
     height: 8px;
     width: 8px; /* 1px wider than Lion. */
@@ -490,6 +497,11 @@ h2, h3{
         height: 160px;
         margin-top: calc(50vh - 95px);
     }
+    .letter .letter-text{
+        min-height: calc(100% - 20px);
+        padding: 10px;
+    }
+
     .reverse .letter{
         height: 45vh;
         width: 85vw;
