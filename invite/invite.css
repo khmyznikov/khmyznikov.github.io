@@ -176,7 +176,7 @@ h2, h3{
     width: 100%;
 
     /* color:#0E0D0B; */
-    color: rgba(2, 37, 0, 0.9);
+    color: rgba(3, 0, 45, 0.9);
 
     overflow-y: auto;
 
@@ -275,7 +275,7 @@ h2, h3{
 .reverse .letter .letter-second-part{
     transform: perspective(900px) rotateX(20deg);
     /* color:#0E0D0B; */
-    color: rgba(2, 37, 0, 0.9);
+    color: rgba(3, 0, 45, 0.9);
   
     animation: letter-second-part-r 1.5s ease forwards 1 0.1s;
 }
@@ -422,14 +422,14 @@ h2, h3{
     100% {
         transform: perspective(900px) rotateX(10deg);
         /* color:#0E0D0B; */
-        color: rgba(2, 37, 0, 0.9);
+        color: rgba(3, 0, 45, 0.9);
         }
     }
 @keyframes letter-second-part-r {
     0%{
         transform: perspective(900px) rotateX(20deg);
         /* color:#0E0D0B; */
-        color: rgba(2, 37, 0, 0.9);
+        color: rgba(3, 0, 45, 0.9);
     }
     50%{
         transform: perspective(1500px) rotateX(90deg);
