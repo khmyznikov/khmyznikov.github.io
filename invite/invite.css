@@ -604,7 +604,7 @@ h2, h3{
 @media screen and (max-width: 414px){
     .reverse .letter{
         margin-top: 25px;
-        height: calc(50vh - 30px);
+        height: calc(50vh - 56px);
         width: 98vw;
     }
     @keyframes letter {
@@ -620,7 +620,7 @@ h2, h3{
             }
         100% {
             margin-top: 25px;
-            height: calc(50vh - 30px);
+            height: calc(50vh - 56px);
             width: 98vw;
             z-index: 2;
             transform: perspective(900px) rotateX(-5deg);
@@ -630,7 +630,7 @@ h2, h3{
     @keyframes letter-r {
         0% {
             margin-top: 25px;
-            height: calc(50vh - 30px);
+            height: calc(50vh - 56px);
             width: 98vw;
             
             z-index: 0;            }
