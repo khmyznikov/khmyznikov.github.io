@@ -205,7 +205,7 @@ h2, h3{
 }
 
 .envelope .wax-stamp{
-    background: url("wax-stamp.png");
+    background: url("wax-stamp-min.png");
     background-size: 132px 250px;
     background-repeat: no-repeat;
     background-position: center;
