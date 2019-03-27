@@ -1,0 +1,19 @@
+@keyframes letter {
+    0% {
+        margin-top: calc(50vh - 155px);
+        }
+    50% {
+        margin-top: 2.5vh;
+        height: 32.5vh;
+        width: 45vw;
+        z-index: 1;
+        transform: perspective(900px) rotateX(-2.5deg);
+        }
+    100% {
+        margin-top: 5vh;
+        height: 65vh;
+        width: 85vw;
+        z-index: 2;
+        transform: perspective(900px) rotateX(-5deg);
+        }
+    }
