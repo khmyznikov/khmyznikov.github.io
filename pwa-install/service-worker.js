@@ -1,7 +1,8 @@
 var cacheName = 'hostmePWA' + Date.now();
 
 var filesToCache = [
-	'/pwa-install',
+	'/',
+	'/pwa-install/',
 	'manifest.json',
 ];
 
