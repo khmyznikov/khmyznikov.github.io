@@ -2,7 +2,8 @@
 const msalConfig = {
     auth: {
         clientId: "d4e36971-ad43-4f4e-8664-5a390d37e228",
-        redirectUri: "pwashell://auth-ms"
+        redirectUri: "https://www.khmyznikov.com/ms-auth-test/"
+        // redirectUri: "pwashell://auth-ms"
     },
     cache: {
         cacheLocation: "sessionStorage", // This configures where your cache will be stored
