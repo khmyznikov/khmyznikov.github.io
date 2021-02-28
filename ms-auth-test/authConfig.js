@@ -1,8 +1,8 @@
 // Config object to be passed to Msal on creation
 const msalConfig = {
     auth: {
-        clientId: "3fba556e-5d4a-48e3-8e1a-fd57c12cb82e",
-        authority: "https://login.windows-ppe.net/common/"
+        clientId: "d4e36971-ad43-4f4e-8664-5a390d37e228",
+        redirectUri: "pwashell://auth-ms"
     },
     cache: {
         cacheLocation: "sessionStorage", // This configures where your cache will be stored
