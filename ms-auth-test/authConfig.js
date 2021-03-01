@@ -2,7 +2,8 @@
 const msalConfig = {
     auth: {
         clientId: "d4e36971-ad43-4f4e-8664-5a390d37e228",
-        redirectUri: "https://www.khmyznikov.com/ms-auth-test/"
+        redirectUri: "https://www.khmyznikov.com/ms-auth-test/",
+        authority: "https://login.microsoftonline.com/common"
         // redirectUri: "pwashell://auth-ms"
     },
     cache: {
