@@ -23,62 +23,46 @@
 	</nav>
 	<br>
 	<div class="container">
-		<div class="col-12">
-			<div class="row">
-						<h4><a href="https://tomayac.github.io/pwa-feature-detector/">Check Available API</a></h4>
-					</div>
-					<br>
-					<div class="row">
-						<h4>Links to test transitions:</h4>
-					</div>
-					<div class="row">
-						<ul class="list-group">
-							<li class="list-group-item">
-								<a href="https://pwa-book.awwwards.com/">External link</a>
-							</li>
-							<li class="list-group-item">
-								<a href="https://www.pwabuilder.com/" target="_blank">External link blank</a>
-							</li>
-							<li class="list-group-item">
-								<a href="" onclick='window.open("https://web.dev/progressive-web-apps/", "Web Dev PWA", "resizable,scrollbars,status")'>External link window.open</a>
-							</li>
-							<li class="list-group-item">
-								<a href="mailto:elon.musk@spacex.com">Email link (don't work in simulator)</a>
-							</li>
-							<li class="list-group-item">
-								<a href="tel:650-413-1111">Phone link (don't work in simulator)</a>
-							</li>
-						</ul>
-					</div>
-		</div>
-		
+		<div class="row">
+			<div class="col-12 col-md-6">
+				<h4><a href="https://tomayac.github.io/pwa-feature-detector/">Check Available API</a></h4>
+				<br>
 
-	</div>
-	<br>
-	<div class="row" style="margin:auto">
-		<div id="card-div" class="col-md-3" style="display:none">
-			<div class="card text-center">
-				<div class="card-body">
-					<h5 class="card-title" id="WelcomeMessage">Please sign-in to see your profile and read your mails
-					</h5>
-					<div id="profile-div"></div>
-					<br>
-					<br>
-					<button class="btn btn-primary" id="seeProfile" onclick="seeProfile()">See Profile</button>
-					<br>
-					<br>
-					<button class="btn btn-primary" id="readMail" onclick="readMail()">Read Mails</button>
+				<h4>Links to test transitions:</h4>
+				<ul class="list-group">
+					<li class="list-group-item">
+						<a href="https://pwa-book.awwwards.com/">External link</a>
+					</li>
+					<li class="list-group-item">
+						<a href="https://www.pwabuilder.com/" target="_blank">External link blank</a>
+					</li>
+					<li class="list-group-item">
+						<a href=""
+							onclick='window.open("https://web.dev/progressive-web-apps/", "Web Dev PWA", "resizable,scrollbars,status")'>External
+							link window.open</a>
+					</li>
+					<li class="list-group-item">
+						<a href="mailto:elon.musk@spacex.com">Email link (don't work in simulator)</a>
+					</li>
+					<li class="list-group-item">
+						<a href="tel:650-413-1111">Phone link (don't work in simulator)</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-12 col-md-6">
+				<br>
+				<br>
+				<br>
+				<br>
+				<div id="card-div" style="display: none;">
+					<div class="card text-center">
+						<div class="card-body">
+							<h5 class="card-title" id="WelcomeMessage">Please sign-in to see your profile
+							</h5>
+							<div id="profile-div"></div>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-		<br>
-		<br>
-		<div class="col-md-4">
-			<div class="list-group" id="list-tab" role="tablist">
-			</div>
-		</div>
-		<div class="col-md-5">
-			<div class="tab-content" id="nav-tabContent">
 			</div>
 		</div>
 	</div>
