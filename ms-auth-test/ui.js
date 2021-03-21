@@ -12,7 +12,7 @@ function showWelcomeMessage(account) {
     welcomeDiv.innerHTML = `Welcome ${account.username}`;
     // signInButton.nextElementSibling.style.display = 'none';
     signInButton.setAttribute("onclick", "signOut();");
-    signInButton.setAttribute('class', "btn btn-success")
+    signInButton.setAttribute('class', "btn btn-success ml-auto")
     signInButton.innerHTML = "Sign Out";
 }
 
