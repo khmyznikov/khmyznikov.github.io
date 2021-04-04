@@ -64,3 +64,24 @@ function updateUI(data, endpoint) {
         }
     }
 }
+
+function printRequest(){
+    if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.print) {
+        window.iOSPrintCapability = true;
+    }
+
+    if (window.iOSPrintCapability)
+        window.webkit.messageHandlers.print.postMessage('print');
+    else
+        window.print();
+
+}
+
+function pushRequest(){
+    if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers['push-permission']) {
+        window.iOSPushCapability = true;
+    }
+
+    if (window.iOSPushCapability)
+        window.webkit.messageHandlers['push-permission'].postMessage('push-permission');
+}
