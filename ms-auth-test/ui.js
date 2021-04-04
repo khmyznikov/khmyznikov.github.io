@@ -74,7 +74,6 @@ function printRequest(){
         window.webkit.messageHandlers.print.postMessage('print');
     else
         window.print();
-
 }
 
 function pushRequest(){
@@ -85,3 +84,18 @@ function pushRequest(){
     if (window.iOSPushCapability)
         window.webkit.messageHandlers['push-permission'].postMessage('push-permission');
 }
+window.addEventListener('push-permission', (message) => {
+    if (message && message.detail){
+        const buttonWrap = document.getElementById('push-permission-wrap');
+        switch (message.detail) {
+            case 'granted':
+                buttonWrap.getElementsByClassName('badge-success')[0].style = '';
+                buttonWrap.getElementsByClassName('badge-danger')[0].style = 'display:none';
+                break;
+            default:
+                buttonWrap.getElementsByClassName('badge-success')[0].style = 'display:none';
+                buttonWrap.getElementsByClassName('badge-danger')[0].style = '';
+                break;
+        }
+    }
+});

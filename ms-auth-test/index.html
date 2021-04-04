@@ -25,7 +25,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-md-6">
-				<h4><a href="https://tomayac.github.io/pwa-feature-detector/">Check Available API</a></h4>
+				<h4><a href="https://tomayac.github.io/pwa-feature-detector/">Check Available Web API</a></h4>
 			</div>
 			
 		</div>
@@ -55,13 +55,15 @@
 			</div>
 			<div class="col-12 col-md-6">
 				<br>
-				<h4>Call Native API:</h4>
+				<h4>Call Swift API:</h4>
 				<ul class="list-group">
 					<li class="list-group-item">
 						<button class="btn btn-info" onclick="printRequest();">Print Request</button>
 					</li>
-					<li class="list-group-item">
+					<li class="list-group-item" id="push-permission-wrap">
 						<button class="btn btn-info" onclick="pushRequest();">Push Permission</button>
+						<span class="badge badge-pill badge-success" style="display: none;">Granted</span>
+						<span class="badge badge-pill badge-danger" style="display: none;">Denied</span>
 					</li>
 				</ul>
 			</div>
