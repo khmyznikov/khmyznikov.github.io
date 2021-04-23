@@ -31,11 +31,31 @@
 			"url": "./manifest.json"
 		}
 	],
-	"screenshots": [
+    "screenshots": [
 		{
-			"src": "/images/screenshots/android-mobile-1.jpg",
-			"sizes": "1440x2880",
-			"type": "image/jpg"
+			"src": "screenshots/mobile-1.jpg",
+			"sizes": "551x979",
+			"type": "image/jpeg"
+		},
+        {
+			"src": "screenshots/mobile-2.jpg",
+			"sizes": "518x922",
+			"type": "image/jpeg"
+		},
+        {
+			"src": "screenshots/mobile-3.jpg",
+			"sizes": "518x922",
+			"type": "image/jpeg"
+		},
+        {
+			"src": "screenshots/tablet-1.jpg",
+			"sizes": "1270x800",
+			"type": "image/jpeg"
+		},
+        {
+			"src": "screenshots/tablet-2.jpg",
+			"sizes": "1274x792",
+			"type": "image/jpeg"
 		}
 	]
   }
