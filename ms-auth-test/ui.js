@@ -100,7 +100,9 @@ window.addEventListener('push-permission', (message) => {
     }
 });
 window.addEventListener('push-notification', (message) => {
-    if (message && message.detail){ 
-        alert(JSON.stringify(message.detail));
+    if (message && message.detail) { 
+        console.log(message.detail);
+        if (message.detail.aps && message.detail.aps.alert)
+            alert(`${message.detail.aps.alert.title} ${message.detail.aps.alert.body}`);
     }
 });
