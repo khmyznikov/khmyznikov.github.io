@@ -101,6 +101,6 @@ window.addEventListener('push-permission', (message) => {
 });
 window.addEventListener('push-notification', (message) => {
     if (message && message.detail){ 
-        alert(message.detail);
+        alert(JSON.stringify(message.detail));
     }
 });
