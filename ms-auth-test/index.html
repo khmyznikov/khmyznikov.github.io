@@ -60,8 +60,14 @@
 					<li class="list-group-item">
 						<button class="btn btn-info" onclick="printRequest();">Print Request</button>
 					</li>
-					<li class="list-group-item" id="push-permission-wrap">
+					<li class="list-group-item" id="push-permission-request-wrap">
 						<button class="btn btn-info" onclick="pushPermissionRequest();">Push Permission</button>
+						<span class="badge badge-pill badge-success" style="display: none;">Allowed</span>
+						<span class="badge badge-pill badge-danger" style="display: none;">Forbidden</span>
+					</li>
+					<li class="list-group-item" id="push-permission-state-wrap">
+						<button class="btn btn-info" onclick="pushPermissionState();">Push State</button>
+						<span class="badge badge-pill badge-info" style="display: none;">Not Asked</span>
 						<span class="badge badge-pill badge-success" style="display: none;">Granted</span>
 						<span class="badge badge-pill badge-danger" style="display: none;">Denied</span>
 					</li>

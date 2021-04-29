@@ -109,18 +109,30 @@ function pushPermissionState(){
 }
 window.addEventListener('push-permission-state', (message) => {
     if (message && message.detail){
-        const buttonWrap = document.getElementById('push-permission-wrap');
-        console.log(message.detail);
-        // switch (message.detail) {
-        //     case 'granted':
-        //         buttonWrap.getElementsByClassName('badge-success')[0].style = '';
-        //         buttonWrap.getElementsByClassName('badge-danger')[0].style = 'display:none';
-        //         break;
-        //     default:
-        //         buttonWrap.getElementsByClassName('badge-success')[0].style = 'display:none';
-        //         buttonWrap.getElementsByClassName('badge-danger')[0].style = '';
-        //         break;
-        // }
+        const buttonWrap = document.getElementById('push-permission-state-wrap');
+        // console.log(message.detail);
+        switch (message.detail) {
+            case 'notDetermined':
+                buttonWrap.getElementsByClassName('badge-info')[0].style = '';
+                buttonWrap.getElementsByClassName('badge-success')[0].style = 'display:none';
+                buttonWrap.getElementsByClassName('badge-danger')[0].style = 'display:none';
+                break;
+            case 'denied':
+                buttonWrap.getElementsByClassName('badge-danger')[0].style = '';
+                buttonWrap.getElementsByClassName('badge-info')[0].style = 'display:none';
+                buttonWrap.getElementsByClassName('badge-success')[0].style = 'display:none';
+                break;
+            case 'authorized':
+                buttonWrap.getElementsByClassName('badge-success')[0].style = '';
+                buttonWrap.getElementsByClassName('badge-danger')[0].style = 'display:none';
+                buttonWrap.getElementsByClassName('badge-info')[0].style = 'display:none';
+                break;
+            default:
+                buttonWrap.getElementsByClassName('badge-success')[0].style = 'display:none';
+                buttonWrap.getElementsByClassName('badge-danger')[0].style = 'display:none';
+                buttonWrap.getElementsByClassName('badge-info')[0].style = 'display:none'
+                break;
+        }
     }
 });
 window.addEventListener('push-notification', (message) => {
