@@ -76,15 +76,15 @@ function printRequest(){
         window.print();
 }
 
-function pushRequest(){
-    if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers['push-permission']) {
+function pushPermissionRequest(){
+    if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers['push-permission-request']) {
         window.iOSPushCapability = true;
     }
 
     if (window.iOSPushCapability)
-        window.webkit.messageHandlers['push-permission'].postMessage('push-permission');
+        window.webkit.messageHandlers['push-permission-request'].postMessage('push-permission-request');
 }
-window.addEventListener('push-permission', (message) => {
+window.addEventListener('push-permission-request', (message) => {
     if (message && message.detail){
         const buttonWrap = document.getElementById('push-permission-wrap');
         switch (message.detail) {
@@ -97,6 +97,30 @@ window.addEventListener('push-permission', (message) => {
                 buttonWrap.getElementsByClassName('badge-danger')[0].style = '';
                 break;
         }
+    }
+});
+function pushPermissionState(){
+    if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers['push-permission-state']) {
+        window.iOSPushCapability = true;
+    }
+
+    if (window.iOSPushCapability)
+        window.webkit.messageHandlers['push-permission-state'].postMessage('push-permission-state');
+}
+window.addEventListener('push-permission-state', (message) => {
+    if (message && message.detail){
+        const buttonWrap = document.getElementById('push-permission-wrap');
+        console.log(message.detail);
+        // switch (message.detail) {
+        //     case 'granted':
+        //         buttonWrap.getElementsByClassName('badge-success')[0].style = '';
+        //         buttonWrap.getElementsByClassName('badge-danger')[0].style = 'display:none';
+        //         break;
+        //     default:
+        //         buttonWrap.getElementsByClassName('badge-success')[0].style = 'display:none';
+        //         buttonWrap.getElementsByClassName('badge-danger')[0].style = '';
+        //         break;
+        // }
     }
 });
 window.addEventListener('push-notification', (message) => {
