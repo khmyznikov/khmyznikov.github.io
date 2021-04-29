@@ -86,7 +86,7 @@ function pushPermissionRequest(){
 }
 window.addEventListener('push-permission-request', (message) => {
     if (message && message.detail){
-        const buttonWrap = document.getElementById('push-permission-wrap');
+        const buttonWrap = document.getElementById('push-permission-request-wrap');
         switch (message.detail) {
             case 'granted':
                 buttonWrap.getElementsByClassName('badge-success')[0].style = '';
