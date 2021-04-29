@@ -123,6 +123,8 @@ window.addEventListener('push-permission-state', (message) => {
                 buttonWrap.getElementsByClassName('badge-success')[0].style = 'display:none';
                 break;
             case 'authorized':
+            case 'ephemeral':
+            case 'provisional':
                 buttonWrap.getElementsByClassName('badge-success')[0].style = '';
                 buttonWrap.getElementsByClassName('badge-danger')[0].style = 'display:none';
                 buttonWrap.getElementsByClassName('badge-info')[0].style = 'display:none';
