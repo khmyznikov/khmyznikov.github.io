@@ -1,4 +1,4 @@
-var cacheName = 'hostmePWA' + Date.now();
+var cacheName = 'hostmePWA_1_' + Date.now();
 
 var filesToCache = [
 	'/',
