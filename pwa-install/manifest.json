@@ -20,7 +20,6 @@
             "purpose": "maskable any"
         }
     ],
-	"prefer_related_applications": true,
 	"related_applications": [
 		{
 			"platform": "play",
