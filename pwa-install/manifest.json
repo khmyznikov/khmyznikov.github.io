@@ -22,11 +22,6 @@
     ],
 	"related_applications": [
 		{
-			"platform": "play",
-			"id": "com.learnpwa.app",
-			"url": "https://play.google.com/store/apps/details?id=com.learnpwa.app"
-		},
-		{
 			"platform": "webapp",
 			"url": "./manifest.json"
 		}
