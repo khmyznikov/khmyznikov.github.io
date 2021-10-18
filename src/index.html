@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Khmyznikov Gleb</title>
+    <meta name="viewport" content="user-scalable=no width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <!-- <link rel="apple-touch-icon" href="/images/logo-min.png"> -->
+    <meta name="theme-color" content="#DECEB4">
+    <meta name="description" content="Personal Website"/>
+    <meta name="author" content="Khmyznikov Gleb"/>
+    <meta charset="utf-8"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap&text=GlebKhmyznikovFRONTENDDEVELOPER" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="style.scss" />
+    <script async type="module" src="script.ts"></script>
+</head>
+<body class='body'>
+    <main id="scene">
+        <div data-depth="0.2" class="container">
+            <div class="cover"></div>
+        </div>
+        <div data-depth="0.4" class="container">
+            <article class="title">
+                <div class="name-job-wrap">
+                    <div class="name"><span>Gleb</span> <span>Khmyznikov</span></div>
+                    <div class="job"><span>Frontend</span> <span>Developer</span></div>
+                </div>
+            </article>
+        </div>
+ 
+        <picture data-depth="0.6" class="container">
+            <source srcset="images/me-min.png?as=avif" type="image/avif" />
+            <source srcset="images/me-min.png?as=webp" type="image/webp" />
+            <img class="me" src="images/me-min.png" alt="gleb" />
+        </picture>
+    
+        <picture data-depth="0.8" class="container">
+            <source srcset="images/crowd-min.png?as=avif" type="image/avif" />
+            <source srcset="images/crowd-min.png?as=webp" type="image/webp" />
+            <img class="crowd" src="images/crowd-min.png" alt="crowd">
+        </picture>
+    </main>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "name": "khmyznikov.github.io",
+  "version": "1.0.0",
+  "description": "personal website",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khmyznikov/khmyznikov.github.io.git"
+  },
+  "author": "khmyznikov",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/khmyznikov/khmyznikov.github.io/issues"
+  },
+  "homepage": "https://github.com/khmyznikov/khmyznikov.github.io#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0",
+    "browserslist": "^4.17.4",
+    "caniuse-lite": "^1.0.30001269",
+    "parcel": "^2.0.0",
+    "sharp": "^0.29.1"
+  },
+  "dependencies": {
+    "parallax-js": "^3.1.0"
+  },
+  "browserslist": [
+    ">= 1%",
+    "not dead",
+    "not IE 11",
+    "not and_uc > 0",
+    "not op_mini all"
+  ]
+}

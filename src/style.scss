@@ -1,0 +1,115 @@
+@mixin bg-image-set($fallback, $imageSet...) {
+    background-image: url($fallback);
+    @if $imageSet {
+        background-image: -webkit-image-set(#{$imageSet});
+        background-image: image-set(#{$imageSet});
+    }
+}
+
+html{
+    height: 100%;
+    overflow: hidden;
+    background-color: #42009d;
+}
+body {
+    min-height: 100%;
+    margin: 0;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 200;
+    font-size: 12pt;
+    color:#fafafa;
+    overflow: hidden;
+
+	overflow: auto;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+main{
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+.cover{
+    left: -5%;
+    top: -5%;
+    width: 110%;
+    height: 110%;
+    position: absolute;
+
+    @include bg-image-set(
+        './images/wall_blurred-min.jpg',
+        url("./images/wall_blurred-min.jpg?as=avif") 1x,
+        url("./images/wall_blurred-min.jpg?as=webp") 1x,
+        url("./images/wall_blurred-min.jpg") 1x
+    );
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    filter: blur(5px);
+}
+.crowd{
+    position: absolute;
+    width: 120%;
+    bottom: -8%;
+    left: -10%;
+    animation: 6s cubic-bezier(0.5, 0.19, 0.51, 0.81) 0s infinite alternate crowd ;
+}
+.me{
+    position: absolute;
+    bottom: 0;
+    right: 5vw;
+    max-height: 45vw;
+
+    animation: 6s cubic-bezier(0.5, 0.19, 0.51, 0.81) 0s infinite alternate me ;
+}
+.container{
+    position: absolute;
+    display: block;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+}
+.title{
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.name-job-wrap{
+    font-size: 9vmax;
+    line-height: calc(80vmin/4);
+    font-weight: 500;
+}
+.job span{
+    letter-spacing: -0.15em;
+	text-transform: uppercase;
+}
+.name span{
+    letter-spacing: -0.05em;
+}
+
+@keyframes crowd {
+    0% {
+      transform:  translate3d(0, 0, 0)  }
+    50% {
+       transform:  translate3d(0, 2.5%, 0)  } 
+    100% {
+      transform:  translate3d(0, 0, 0)  } 
+    }
+
+@keyframes me {
+    0% {
+        transform:  rotate3d(0, 0, 1, 0);  }
+    50% {
+        transform:  rotate3d(0, 0, 1, 1deg);  }
+    100% {
+        transform:  rotate3d(0, 0, 1, -1deg);  } 
+}
+
+*{
+    box-sizing: border-box;
+}
