@@ -18,14 +18,47 @@ body {
   width: 100%;
 }
 
-main {
+main#scene {
   position: relative;
   overflow: hidden;
   height: 100%;
   width: 100%;
 }
 
-.cover {
+main#scene .container {
+  position: absolute;
+  display: block;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+footer {
+  position: absolute;
+  display: inline-block;
+  font-size: 0;
+  bottom: max(15px, env(safe-area-inset-bottom));
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+footer a + a {
+  margin-left: 15px;
+}
+
+footer img {
+  width: 45px;
+  opacity: 0.6;
+}
+
+footer img:hover {
+  opacity: 1;
+}
+
+.cover .background {
   left: -5%;
   top: -5%;
   width: 110%;
@@ -40,50 +73,71 @@ main {
   filter: blur(5px);
 }
 
-.crowd {
+.crowd img {
   position: absolute;
   width: 120%;
   bottom: -8%;
   left: -10%;
+  max-height: 50vh;
   animation: 6s cubic-bezier(0.5, 0.19, 0.51, 0.81) 0s infinite alternate crowd;
 }
 
-.me {
+.me img {
   position: absolute;
   bottom: 0;
   right: 5vw;
-  max-height: 45vw;
+  max-height: 90vh;
+  height: 50vw;
   animation: 6s cubic-bezier(0.5, 0.19, 0.51, 0.81) 0s infinite alternate me;
 }
 
-.container {
-  position: absolute;
-  display: block;
-  left: 0px;
-  top: 0px;
-  height: 100%;
-  width: 100%;
-}
-
-.title {
+.name-job-wrap {
   width: 90vw;
   margin: 0 auto;
   margin-top: 10px;
-}
-
-.name-job-wrap {
-  font-size: 9vmax;
-  line-height: 20vmin;
+  font-size: min(12.5vw, 33.3333333333vh);
+  line-height: min(1em, 25vh);
   font-weight: 500;
 }
 
-.job span {
+.name-job-wrap .name, .name-job-wrap .job {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+.name-job-wrap .job {
+  margin-top: min(0.5em, 5vh);
+}
+
+.name-job-wrap .job span {
   letter-spacing: -0.15em;
   text-transform: uppercase;
 }
 
-.name span {
+.name-job-wrap .name span {
   letter-spacing: -0.05em;
+}
+
+@media (orientation: portrait) {
+  .me img {
+    right: min(-25vw, -20vh);
+    max-height: min(200vw, 80vh);
+    min-height: 70vh;
+    height: 100%;
+  }
+
+  .crowd img {
+    max-height: 60vh;
+    width: 200vh;
+  }
+
+  .name-job-wrap {
+    font-size: 16.6666666667vw;
+  }
+  .name-job-wrap p.job {
+    margin-top: 0.5em;
+  }
 }
 
 @keyframes crowd {

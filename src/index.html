@@ -19,29 +19,34 @@
 </head>
 <body class='body'>
     <main id="scene">
-        <div data-depth="0.2" class="container">
-            <div class="cover"></div>
-        </div>
-        <div data-depth="0.4" class="container">
-            <article class="title">
-                <div class="name-job-wrap">
-                    <div class="name"><span>Gleb</span> <span>Khmyznikov</span></div>
-                    <div class="job"><span>Frontend</span> <span>Developer</span></div>
-                </div>
+        <section data-depth="0.2" class="container cover">
+            <div class="background"></div>
+        </section>
+   
+        <header data-depth="0.4"  class="container">
+            <article class="name-job-wrap">
+                <h1 class="name"><span>Gleb</span> <span>Khmyznikov</span></h1>
+                <p class="job"><span>Frontend</span> <span>Developer</span></p>
             </article>
-        </div>
+        </header>
+    
  
-        <picture data-depth="0.6" class="container">
+        <picture data-depth="0.6" class="container me">
             <source srcset="images/me-min.png?as=avif" type="image/avif" />
             <source srcset="images/me-min.png?as=webp" type="image/webp" />
-            <img class="me" src="images/me-min.png" alt="gleb" />
+            <img src="images/me-min.png" alt="gleb" />
         </picture>
     
-        <picture data-depth="0.8" class="container">
+        <picture data-depth="0.8" class="container crowd">
             <source srcset="images/crowd-min.png?as=avif" type="image/avif" />
             <source srcset="images/crowd-min.png?as=webp" type="image/webp" />
-            <img class="crowd" src="images/crowd-min.png" alt="crowd">
+            <img src="images/crowd-min.png" alt="crowd">
         </picture>
     </main>
+    <footer>
+        <a target="_blank" href="https://www.linkedin.com/in/gleb-khmyznikov-130511128"><img src="./images/linkedin.svg" alt="linkedin" /></a>
+        <a target="_blank" href="https://www.instagram.com/khmyznikov"><img src="./images/instagram.svg" alt="instagram" /></a>
+        <a target="_blank" href="https://twitter.com/khmyznikov"><img src="./images/twitter.svg" alt="twitter" /></a>
+    </footer>
 </body>
 </html>
