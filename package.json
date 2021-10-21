@@ -4,8 +4,8 @@
   "description": "personal website",
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel --dist-dir ./",
-    "build": "parcel build",
+    "start": "parcel --dist-dir .temp",
+    "build": "parcel build --dist-dir ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/khmyznikov/khmyznikov.github.io#readme",
   "devDependencies": {
+    "@parcel/compressor-gzip": "^2.0.0",
+    "@parcel/config-default": "^2.0.0",
     "@parcel/packager-raw-url": "^2.0.0",
     "@parcel/transformer-sass": "^2.0.0",
     "@parcel/transformer-webmanifest": "^2.0.0",

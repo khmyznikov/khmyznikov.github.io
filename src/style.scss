@@ -72,17 +72,17 @@ footer{
     position: absolute;
 
     @include bg-image-set(
-        './images/wall_blurred-min.jpg',
-        url("./images/wall_blurred-min.jpg?as=avif") 1x,
-        url("./images/wall_blurred-min.jpg?as=webp") 1x,
-        url("./images/wall_blurred-min.jpg") 1x
+        './images/wall-min.jpg',
+        url("./images/wall-min.jpg?as=avif") 1x,
+        url("./images/wall-min.jpg?as=webp") 1x,
+        url("./images/wall-min.jpg") 1x
     );
 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 
-    filter: blur(5px);
+    filter: blur(8px);
 }
 .crowd img{
     position: absolute;
