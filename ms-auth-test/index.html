@@ -3,11 +3,12 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, shrink-to-fit=no">
 	<title>PWA Shell test | MSAL.JS Auth</title>
 
 	<script src="https://alcdn.msauth.net/browser/2.11.2/js/msal-browser.min.js"></script>
 
+	<link rel="stylesheet" href="./style.css">
 	<!-- adding Bootstrap 4 for UI components  -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -83,13 +84,13 @@
 				<iframe width="100%" height="180" src="https://www.youtube.com/embed/ebYYqqGeKkU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" id="card-div" style="display: none;">
 			<div class="col-12 col-md-6">
 				<br>
 				<br>
 				<br>
 				<br>
-				<div id="card-div" style="display: none;">
+				<div>
 					<div class="card text-center">
 						<div class="card-body">
 							<h5 class="card-title" id="WelcomeMessage">Please sign-in to see your profile
@@ -102,8 +103,6 @@
 		</div>
 		
 	</div>
-	<br>
-	<br>
 
 	<!-- importing bootstrap.js and supporting js libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
