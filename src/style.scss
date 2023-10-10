@@ -67,20 +67,20 @@ footer{
 .cover .background{
     left: -5%;
     top: -5%;
-    width: 110%;
+    // width: 110%;
     height: 110%;
     position: absolute;
 
-    @include bg-image-set(
-        './images/wall-min.jpg',
-        url("./images/wall-min.jpg?as=avif") 1x,
-        url("./images/wall-min.jpg?as=webp") 1x,
-        url("./images/wall-min.jpg") 1x
-    );
+    // @include bg-image-set(
+    //     './images/wall-min.jpg',
+    //     url("./images/wall-min.jpg?as=avif") 1x,
+    //     url("./images/wall-min.jpg?as=webp") 1x,
+    //     url("./images/wall-min.jpg") 1x
+    // );
 
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-position: center center;
 
     filter: blur(8px);
 }

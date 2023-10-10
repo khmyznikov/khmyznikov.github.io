@@ -25,9 +25,11 @@
 </head>
 <body class='body'>
     <main id="scene">
-        <section data-depth="0.2" class="container cover">
-            <div class="background"></div>
-        </section>
+        <picture data-depth="0.2" class="container cover">
+            <source srcset="images/wall-min.jpg?as=avif" type="image/avif" />
+            <source srcset="images/wall-min.jpg?as=webp" type="image/webp" />
+            <img src="images/wall-min.jpg" alt="background" class="background" />
+        </picture>
    
         <header data-depth="0.4"  class="container">
             <article class="name-job-wrap">
@@ -50,6 +52,7 @@
         </picture>
     </main>
     <footer>
+        <a target="_blank" href="https://github.com/khmyznikov"><img src="./icons/github.svg" alt="github" /></a>
         <a target="_blank" href="https://www.linkedin.com/in/gleb-khmyznikov-130511128"><img src="./icons/linkedin.svg" alt="linkedin" /></a>
         <!-- <a target="_blank" href="https://www.instagram.com/khmyznikov"><img src="./icons/instagram.svg" alt="instagram" /></a> -->
         <a target="_blank" href="https://twitter.com/khmyznikov"><img src="./icons/twitter.svg" alt="twitter" /></a>
