@@ -144,3 +144,50 @@ window.addEventListener('push-notification', (message) => {
             alert(`${message.detail.aps.alert.title} ${message.detail.aps.alert.body}`);
     }
 });
+
+function purchaseRequest(){
+    if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers['iap-purchase-request']) {
+        window.IAP = true;
+    }
+
+    if (window.IAP)
+        window.webkit.messageHandlers['iap-purchase-request'].postMessage('demo_subscription_auto'); //window.products[1].attributes.offerName
+}
+function transactionsRequest(){
+    if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers['iap-transactions-request']) {
+        window.IAP = true;
+    }
+
+    if (window.IAP)
+        window.webkit.messageHandlers['iap-transactions-request'].postMessage('request');
+}
+function productsRequest(){
+    if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers['iap-products-request']) {
+        window.IAP = true;
+    }
+
+    if (window.IAP)
+        window.webkit.messageHandlers['iap-products-request'].postMessage(['demo_product_id', 'demo_product2_id', 'demo_subscription', 'demo_subscription_auto']);
+}
+window.addEventListener('iap-transactions-result', (message) => {
+    if (message && message.detail) { 
+        console.log(JSON.parse(message.detail));
+        // if (message.detail.aps && message.detail.aps.alert)
+        //     alert(`${message.detail.aps.alert.title} ${message.detail.aps.alert.body}`);
+    }
+});
+window.addEventListener('iap-purchase-result', (message) => {
+    if (message && message.detail) { 
+        console.log(message.detail);
+        // if (message.detail.aps && message.detail.aps.alert)
+        //     alert(`${message.detail.aps.alert.title} ${message.detail.aps.alert.body}`);
+    }
+});
+window.addEventListener('iap-products-result', (message) => {
+    if (message && message.detail) { 
+        window.products = JSON.parse(message.detail);
+        console.log(window.products);
+        // if (message.detail.aps && message.detail.aps.alert)
+        //     alert(`${message.detail.aps.alert.title} ${message.detail.aps.alert.body}`);
+    }
+});
