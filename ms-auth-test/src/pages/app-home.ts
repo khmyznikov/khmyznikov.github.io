@@ -30,8 +30,10 @@ export class AppHome extends LitElement {
   @property() message = 'Welcome!';
   
   @state() pushLog = '';
+  @state() iapLog = '';
   @state() iOSPushCapability = false;
   @state() iOSPrintCapability = false;
+  @state() iOSIAPCapability = false;
 
   static styles = [
     // styles,
@@ -44,9 +46,9 @@ export class AppHome extends LitElement {
 		}
   `];
 
-	logMessage(message: string){
+	logMessage(message: string, iap?: boolean){
 		console.log(message);
-		this.pushLog += `>: ${message}\r\n`;
+		this[iap? 'iapLog': 'pushLog'] += `>: ${message}\r\n`;
 	}
 
   async firstUpdated() {
@@ -72,11 +74,34 @@ export class AppHome extends LitElement {
 		}
 	});
 
+	// @ts-ignore
+	window.addEventListener('iap-transactions-result', (event: CustomEvent) => {
+		if (event && event.detail) { 
+			this.logMessage(event.detail, true);
+		}
+	});
+	// @ts-ignore
+	window.addEventListener('iap-purchase-result', (event: CustomEvent) => {
+		if (event && event.detail) { 
+			this.logMessage(event.detail, true);
+		}
+	});
+	// @ts-ignore
+	window.addEventListener('iap-products-result', (event: CustomEvent) => {
+		if (event && event.detail) { 
+			this.logMessage(event.detail, true);
+		}
+	});
+
 	if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers['push-permission-request'] && window.webkit.messageHandlers['push-permission-state']) {
 		this.iOSPushCapability = true;
 	}
 	if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.print) {
 		this.iOSPrintCapability = true;
+	}
+
+	if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers['iap-purchase-request'] && window.webkit.messageHandlers['iap-transactions-request'] && window.webkit.messageHandlers['iap-products-request']) {
+		this.iOSIAPCapability = true;
 	}
   }
 
@@ -99,6 +124,20 @@ export class AppHome extends LitElement {
 	}
 
 
+	purchaseRequest(){
+		if (this.iOSIAPCapability)
+			window.webkit.messageHandlers['iap-purchase-request'].postMessage('demo_subscription_auto'); //window.products[1].attributes.offerName
+	}
+	transactionsRequest(){
+		if (this.iOSIAPCapability)
+			window.webkit.messageHandlers['iap-transactions-request'].postMessage('request');
+	}
+	productsRequest(){
+		if (this.iOSIAPCapability)
+			window.webkit.messageHandlers['iap-products-request'].postMessage(['demo_product_id', 'demo_product2_id', 'demo_subscription', 'demo_subscription_auto']);
+	}
+
+
   render() {
     return html`
 	<app-header></app-header>
@@ -114,12 +153,20 @@ export class AppHome extends LitElement {
 						<nord-button variant="primary" @click="${() => alert("alert box")}">Alert</nord-button>
 					</nord-stack>
 				</nord-fieldset>
-				<nord-fieldset label="Push">
+				<nord-divider></nord-divider>
+				<nord-fieldset label="Push Notifications">
 					<nord-stack direction="horizontal">
 						<nord-button variant="primary" @click="${this.pushPermissionRequest}">Push Permission</nord-button>
 						<nord-button variant="primary" @click="${this.pushPermissionState}">Push State</nord-button>
 					</nord-stack>
-					<nord-textarea readonly value="${this.pushLog}"></nord-textarea>
+					<nord-textarea readonly value="${this.pushLog}" placeholder="events log"></nord-textarea>
+				</nord-fieldset>
+				<nord-divider></nord-divider>
+				<nord-fieldset label="In-App Purchase">
+					<nord-button variant="primary" @click="${this.productsRequest}">Products</nord-button>
+					<nord-button variant="primary" @click="${this.transactionsRequest}">Transactions</nord-button>
+					<nord-button variant="primary" @click="${this.purchaseRequest}">Purchase</nord-button>
+					<nord-textarea readonly value="${this.iapLog}" placeholder="events log"></nord-textarea>
 				</nord-fieldset>
 			</nord-stack>
 			<p slot="header-end">Call native APIs from WebView</p>
