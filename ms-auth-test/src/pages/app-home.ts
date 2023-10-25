@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit';
 import { property, customElement, state } from 'lit/decorators.js';
-import { resolveRouterPath } from '../router';
+// import { resolveRouterPath } from '../router';
 
 import '@nordhealth/components/lib/Button.js';
 import '@nordhealth/components/lib/Fieldset.js';

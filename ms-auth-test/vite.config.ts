@@ -8,6 +8,7 @@ export default defineConfig({
     sourcemap: true,
     assetsDir: "code",
     target: ["esnext", "edge100", "firefox100", "chrome100", "safari18"],
+    outDir: "docs",
   },
   // publicDir: "node_modules/@esri/calcite-components/dist/calcite",
   plugins: [
@@ -15,8 +16,8 @@ export default defineConfig({
       strategies: "injectManifest",
       injectManifest: {
         swSrc: 'public/sw.js',
-        swDest: 'dist/sw.js',
-        globDirectory: 'dist',
+        swDest: 'docs/sw.js',
+        globDirectory: 'docs',
         globPatterns: [
           '**/*.{html,js,css,json, png}',
         ],
